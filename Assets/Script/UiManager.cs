@@ -23,7 +23,7 @@ public class UiManager : MonoBehaviour
             go.Init();
         });
 
-        button.onClick.AddListener(() =>
+        charaGeneButton.onClick.AddListener(() =>
         {
             var go = GameManager.RegisterPrefab(charaPrefab, transform);
             go.Init();

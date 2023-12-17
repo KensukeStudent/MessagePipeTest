@@ -25,9 +25,9 @@ public class UiController : MonoBehaviour
         var d = DisposableBag.CreateBuilder();
         subscriber.Subscribe(data =>
         {
-            id.text = data.characterId.ToString();
-            attack.text = $"攻撃力が{data.attack}になりました";
-            speed.text = $"速度が{data.speed}になりました";
+            id.text = $"CharacterId : {data.characterId}";
+            attack.text = $"attack Status : {data.attack}";
+            speed.text = $"speed Status : {data.speed}";
         }).AddTo(d);
         disposable = d.Build();
     }
