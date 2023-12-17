@@ -9,11 +9,23 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Button button = null;
 
+    [SerializeField]
+    private Character charaPrefab = null;
+
+    [SerializeField]
+    private Button charaGeneButton = null;
+
     public void OnAwake()
     {
         button.onClick.AddListener(() =>
         {
             var go = GameManager.RegisterPrefab(prefab, transform);
+            go.Init();
+        });
+
+        button.onClick.AddListener(() =>
+        {
+            var go = GameManager.RegisterPrefab(charaPrefab, transform);
             go.Init();
         });
     }
