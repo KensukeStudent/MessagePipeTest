@@ -42,13 +42,13 @@ public class Character : MonoBehaviour
         publishStatus.Publish(statusData);
     }
 
-    public void IncreaseSpeed()
+    private void IncreaseSpeed()
     {
         statusData.speed += Random.Range(0, 100);
         UpdateStatus();
     }
 
-    public void IncreaseAttack()
+    private void IncreaseAttack()
     {
         statusData.attack += Random.Range(0, 100);
         UpdateStatus();

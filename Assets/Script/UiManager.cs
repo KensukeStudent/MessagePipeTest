@@ -15,18 +15,34 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Button charaGeneButton = null;
 
+    // 生成クラス
+
+    private UiController controller = null;
+
+    private Character character = null;
+
     public void OnAwake()
     {
+        // キャラクターのステータス情報を表示
         button.onClick.AddListener(() =>
         {
-            var go = GameManager.RegisterPrefab(prefab, transform);
-            go.Init();
+            if (controller == null)
+            {
+                var go = GameManager.RegisterPrefab(prefab, transform);
+                controller = go;
+                go.Init();
+            }
         });
 
+        // 適当な秒間でステータスが向上
         charaGeneButton.onClick.AddListener(() =>
         {
-            var go = GameManager.RegisterPrefab(charaPrefab, transform);
-            go.Init();
+            if (character == null)
+            {
+                var go = GameManager.RegisterPrefab(charaPrefab, transform);
+                character = go;
+                go.Init();
+            }
         });
     }
 }
